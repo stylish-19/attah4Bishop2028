@@ -1,0 +1,87 @@
+/* ================================
+   Rev. Dr. Alvin E. Attah 2028 Styles
+   ================================ */
+
+#attah2028 .section-title h2 {
+    color: green;
+    font-weight: 700;
+}
+
+#attah2028 .lead {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: green;
+}
+
+
+/* Service Items */
+
+#attah2028 .service-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px green;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+#attah2028 .service-item .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: green;
+}
+
+#attah2028 .service-item h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #053805;
+}
+
+#attah2028 .service-item p {
+    color: green;
+    line-height: 1.7;
+}
+
+#attah2028 .service-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Item Color Accents */
+
+#attah2028 .item-cyan .icon {
+    color: #00bcd4;
+}
+
+#attah2028 .item-orange .icon {
+    color: #ff9800;
+}
+
+#attah2028 .item-teal .icon {
+    color: green;
+}
+
+#attah2028 .item-red .icon {
+    color: #f44336;
+}
+
+#attah2028 .item-indigo .icon {
+    color: #3f51b5;
+}
+
+#attah2028 .item-pink .icon {
+    color: #e91e63;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    #attah2028 .lead {
+        font-size: 1rem;
+    }
+}
