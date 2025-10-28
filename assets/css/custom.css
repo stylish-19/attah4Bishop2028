@@ -2,8 +2,16 @@
    Rev. Dr. Alvin E. Attah 2028 Styles
    ================================ */
 
+
+/* ====== White Text for Services Page Title Section ====== */
+
+.services .section-title h2,
+.services .section-title p {
+    color: #ffffff !important;
+}
+
 #attah2028 .section-title h2 {
-    color: green;
+    color: rgb(232, 238, 232);
     font-weight: 700;
 }
 
@@ -11,7 +19,7 @@
     max-width: 720px;
     margin: 0 auto;
     font-size: 1.15rem;
-    color: green;
+    color: white;
 }
 
 
@@ -51,10 +59,42 @@
 }
 
 
+/*background image styling for service page*/
+
+
+/* ====== Blurred Background for Services Page ====== */
+
+.services.section {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+    /* optional overlay tint */
+    overflow: hidden;
+}
+
+
+/* Background image behind the services section */
+
+.services.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/attah-bg.jpg') center center / cover no-repeat;
+    filter: blur(1px) brightness(0.8);
+    /* Adjust blur & brightness */
+    z-index: -1;
+    opacity: 0.7;
+    /* controls how visible the background is */
+}
+
+
 /* Item Color Accents */
 
 #attah2028 .item-cyan .icon {
-    color: #00bcd4;
+    color: green;
 }
 
 #attah2028 .item-orange .icon {
@@ -66,7 +106,7 @@
 }
 
 #attah2028 .item-red .icon {
-    color: #f44336;
+    color: #13c239;
 }
 
 #attah2028 .item-indigo .icon {
@@ -74,7 +114,46 @@
 }
 
 #attah2028 .item-pink .icon {
-    color: #e91e63;
+    color: #0c9e18;
+}
+
+
+/* ====== Uniform Green Style for All Service Icons ====== */
+
+.services .icon {
+    background: rgba(0, 128, 0, 0.1);
+    /* soft green circle background */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.services .icon i {
+    color: #008000;
+    /* strong green icon color */
+    font-size: 40px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Hover Effect */
+
+.services .service-item:hover .icon {
+    background: #008000;
+    /* solid green on hover */
+    box-shadow: 0 6px 20px rgba(0, 128, 0, 0.4);
+}
+
+.services .service-item:hover .icon i {
+    color: #ffffff;
+    /* turn white when hovered */
+    transform: scale(1.1);
 }
 
 
