@@ -1,0 +1,32 @@
+/* Blog Page Styles */
+
+.blog-header {
+    background: linear-gradient(to right, #2E8B57, #4CAF50);
+    color: #fff;
+    padding: 80px 0;
+}
+
+.blog-card {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card img {
+    height: 230px;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.blog-card .card-body {
+    padding: 1.5rem;
+}
+
+.light-background {
+    background: #f9f9f9;
+}

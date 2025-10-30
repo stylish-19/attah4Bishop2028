@@ -843,7 +843,7 @@ section,
 }
 
 .attah-intro {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 16px;
     color: #fff;
@@ -851,6 +851,7 @@ section,
 
 .attah-body {
     line-height: 1.7;
+    font-size: 1.1rem;
     margin-bottom: 16px;
     color: white;
     /* Adds contrast for body text */
@@ -1201,7 +1202,7 @@ section,
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-    color: rgb(239, 243, 239);
+    color: green;
     background-color: var(--accent-color);
 }
 
@@ -1353,6 +1354,27 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
+
+/*Form Styling*/
+
+.php-email-form button {
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.php-email-form button:hover {
+    background-color: #256628;
+    transform: scale(1.05);
+}
+
+
+/*Form Styling end*/
 
 
 /* Campaign green highlight */
