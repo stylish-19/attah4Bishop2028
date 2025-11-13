@@ -113,84 +113,154 @@
                         <form id="contact-form" action="https://formspree.io/f/mwpwqqdn" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                             <div class="row gy-4">
 
+                                <!-- Name -->
                                 <div class="col-md-6">
                                     <label for="name-field" class="pb-2">Your Name</label>
                                     <input type="text" name="name" id="name-field" class="form-control" required>
                                 </div>
 
+                                <!-- Email -->
                                 <div class="col-md-6">
                                     <label for="email-field" class="pb-2">Your Email</label>
                                     <input type="email" class="form-control" name="email" id="email-field" required>
                                 </div>
 
-                                <div class="col-md-12">
-                                    <label for="subject-field" class="pb-2">Subject</label>
-                                    <input type="text" class="form-control" name="subject" id="subject-field" required>
+                                <!-- WhatsApp Number -->
+                                <div class="col-md-6">
+                                    <label for="whatsapp-field" class="pb-2">WhatsApp Number</label>
+                                    <input type="tel" class="form-control" name="whatsapp" id="whatsapp-field" placeholder="+231-xxx-xxx-xxx" required>
                                 </div>
 
+                                <!-- Sex -->
+                                <div class="col-md-6">
+                                    <label for="sex-field" class="pb-2">Sex</label>
+                                    <select name="sex" id="sex-field" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+                                </div>
+
+                                <!-- Age Range -->
+                                <div class="col-md-6">
+                                    <label for="age-field" class="pb-2">Age Range</label>
+                                    <select name="age_range" id="age-field" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option value="Under 18">Under 18</option>
+                    <option value="18-25">18 - 25</option>
+                    <option value="26-35">26 - 35</option>
+                    <option value="36-45">36 - 45</option>
+                    <option value="46-60">46 - 60</option>
+                    <option value="60+">60+</option>
+                </select>
+                                </div>
+
+                                <!-- District -->
+                                <div class="col-md-6">
+                                    <label for="district-field" class="pb-2">District</label>
+                                    <select name="district" id="district-field" class="form-select" required>
+                    <option value="">Select Episcopal District...</option>
+                    <option>1st Episcopal District</option>
+                    <option>2nd Episcopal District</option>
+                    <option>3rd Episcopal District</option>
+                    <option>4th Episcopal District</option>
+                    <option>5th Episcopal District</option>
+                    <option>6th Episcopal District</option>
+                    <option>7th Episcopal District</option>
+                    <option>8th Episcopal District</option>
+                    <option>9th Episcopal District</option>
+                    <option>10th Episcopal District</option>
+                    <option>11th Episcopal District</option>
+                    <option>12th Episcopal District</option>
+                    <option>13th Episcopal District</option>
+                    <option>14th Episcopal District</option>
+                    <option>15th Episcopal District</option>
+                    <option>16th Episcopal District</option>
+                    <option>17th Episcopal District</option>
+                    <option>18th Episcopal District</option>
+                    <option>19th Episcopal District</option>
+                    <option>20th Episcopal District</option>
+                </select>
+                                </div>
+
+                                <!-- Status -->
+                                <div class="col-md-6">
+                                    <label for="status-field" class="pb-2">Status</label>
+                                    <select name="status" id="status-field" class="form-select" required>
+                    <option value="">Select...</option>
+                    <option value="Clergy">Clergy</option>
+                    <option value="Laity">Laity</option>
+                    <option value="Youth">Youth</option>
+                </select>
+                                </div>
+
+                                <!-- Message -->
                                 <div class="col-md-12">
                                     <label for="message-field" class="pb-2">Message</label>
-                                    <textarea class="form-control" name="message" rows="10" id="message-field" required></textarea>
+                                    <textarea class="form-control" name="message" rows="10" id="message-field" placeholder="Write your message here..." required></textarea>
                                 </div>
 
+                                <!-- Submit -->
                                 <div class="col-md-12 text-center">
                                     <div class="loading">Loading</div>
                                     <div class="error-message"></div>
                                     <div class="sent-message" style="display:none;">✅ Your message has been sent successfully! Thank you for contacting us.</div>
-
                                     <button type="submit">Send Message</button>
                                 </div>
 
                             </div>
                         </form>
 
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function() {
-                                const form = document.getElementById("contact-form");
-                                const successMsg = document.querySelector(".sent-message");
-                                const errorMsg = document.querySelector(".error-message");
+                    </div>
 
-                                form.addEventListener("submit", async function(e) {
-                                    e.preventDefault();
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const form = document.getElementById("contact-form");
+                            const successMsg = document.querySelector(".sent-message");
+                            const errorMsg = document.querySelector(".error-message");
 
-                                    successMsg.style.display = "none";
-                                    errorMsg.style.display = "none";
+                            form.addEventListener("submit", async function(e) {
+                                e.preventDefault();
 
-                                    const formData = new FormData(form);
+                                successMsg.style.display = "none";
+                                errorMsg.style.display = "none";
 
-                                    try {
-                                        const response = await fetch(form.action, {
-                                            method: form.method,
-                                            body: formData,
-                                            headers: {
-                                                Accept: "application/json"
-                                            },
-                                        });
+                                const formData = new FormData(form);
 
-                                        if (response.ok) {
-                                            // ✅ Clear the form and show thank you message
-                                            form.reset();
-                                            successMsg.textContent = "✅ Thank you! Your message has been sent successfully.";
-                                            successMsg.style.display = "block";
-                                            errorMsg.style.display = "none";
-                                        } else {
-                                            // ❌ If not ok, show clean error (no JSON text)
-                                            errorMsg.textContent = "❌ There was a problem sending your message. Please try again.";
-                                            errorMsg.style.display = "block";
-                                        }
-                                    } catch (error) {
-                                        console.error("Error submitting form:", error);
-                                        errorMsg.textContent = "❌ Network error. Please try again later.";
+                                try {
+                                    const response = await fetch(form.action, {
+                                        method: form.method,
+                                        body: formData,
+                                        headers: {
+                                            Accept: "application/json"
+                                        },
+                                    });
+
+                                    if (response.ok) {
+                                        // ✅ Clear the form and show thank you message
+                                        form.reset();
+                                        successMsg.textContent = "✅ Thank you! Your message has been sent successfully.";
+                                        successMsg.style.display = "block";
+                                        errorMsg.style.display = "none";
+                                    } else {
+                                        // ❌ If not ok, show clean error (no JSON text)
+                                        errorMsg.textContent = "❌ There was a problem sending your message. Please try again.";
                                         errorMsg.style.display = "block";
                                     }
-                                });
+                                } catch (error) {
+                                    console.error("Error submitting form:", error);
+                                    errorMsg.textContent = "❌ Network error. Please try again later.";
+                                    errorMsg.style.display = "block";
+                                }
                             });
-                        </script>
-
-                    </div>
-                    <!-- End Contact Form -->
+                        });
+                    </script>
 
                 </div>
+                <!-- End Contact Form -->
+
+            </div>
 
             </div>
 
